@@ -11,7 +11,7 @@ void main() {
       ),
     );
     expect(
-      find.text("Material"),
+      find.text("Android"),
       findsOneWidget,
     );
   });
@@ -24,7 +24,7 @@ void main() {
       ),
     );
     expect(
-      find.text("Cupertino"),
+      find.text("iOS"),
       findsOneWidget,
     );
 

@@ -2,7 +2,7 @@ import 'package:flutter/foundation.dart';
 
 bool get isIOS {
   if (!isWeb) {
-    defaultTargetPlatform == TargetPlatform.iOS;
+    return defaultTargetPlatform == TargetPlatform.iOS;
   }
 
   return false;
@@ -10,7 +10,7 @@ bool get isIOS {
 
 bool get isAndroid {
   if (!isWeb) {
-    defaultTargetPlatform == TargetPlatform.android;
+    return defaultTargetPlatform == TargetPlatform.android;
   }
 
   return false;
@@ -18,7 +18,7 @@ bool get isAndroid {
 
 bool get isLinux {
   if (!isWeb) {
-    defaultTargetPlatform == TargetPlatform.linux;
+    return defaultTargetPlatform == TargetPlatform.linux;
   }
 
   return false;
@@ -26,7 +26,7 @@ bool get isLinux {
 
 bool get isMac {
   if (!isWeb) {
-    defaultTargetPlatform == TargetPlatform.macOS;
+    return defaultTargetPlatform == TargetPlatform.macOS;
   }
 
   return false;
@@ -34,7 +34,7 @@ bool get isMac {
 
 bool get isWindows {
   if (!isWeb) {
-    defaultTargetPlatform == TargetPlatform.windows;
+    return defaultTargetPlatform == TargetPlatform.windows;
   }
 
   return false;

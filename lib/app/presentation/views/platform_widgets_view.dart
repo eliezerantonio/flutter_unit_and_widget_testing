@@ -16,12 +16,12 @@ class PlatformWidgetsView extends StatelessWidget {
           children: [
             if (isIOS)
               CupertinoButton(
-                child: const Text('Cupertino'),
+                child: const Text('iOS'),
                 onPressed: () {},
               )
             else
               ElevatedButton(
-                child: const Text('Material'),
+                child: Text(isWeb ? 'Web' : 'Android'),
                 onPressed: () {},
               ),
           ],

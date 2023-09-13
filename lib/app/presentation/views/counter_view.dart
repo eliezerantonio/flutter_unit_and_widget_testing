@@ -20,7 +20,26 @@ class _CounterViewState extends State<CounterView> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(),
+      appBar: AppBar(
+        actions: [
+          IconButton(
+            onPressed: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (_) => Scaffold(
+                    appBar: AppBar(),
+                    body: const Center(
+                      child: Text("data"),
+                    ),
+                  ),
+                ),
+              );
+            },
+            icon: const Icon(Icons.next_plan),
+          )
+        ],
+      ),
       body: Center(
         child: Text(
           '$_counter',
@@ -29,10 +48,13 @@ class _CounterViewState extends State<CounterView> {
           ),
         ),
       ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: _increment,
-        child: const Icon(Icons.add),
-      ),
+      floatingActionButton: _counter < 5
+          ? FloatingActionButton(
+              key: const Key('button'),
+              onPressed: _increment,
+              child: const Icon(Icons.add),
+            )
+          : null,
     );
   }
 }

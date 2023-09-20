@@ -47,7 +47,13 @@ void main() {
     expect(find.byType(CircularProgressIndicator), findsOneWidget);
 
     await tester.pumpAndSettle();
+    expect(find.byType(CircularProgressIndicator), findsNothing);
     expect(find.text("Invalid email or password"), findsOneWidget);
+
+    await tester.tap(find.text("OK"));
+    await tester.pumpAndSettle();
+
+    expect(find.text("Invalid email or password"), findsNothing);
   });
 
   testWidgets("LoginView > ok", (tester) async {

@@ -9,27 +9,31 @@ class ContentNotVisibleView extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(),
-      body: ListView(
-        children: [
-          ...Colors.primaries.map(
-            (e) => Container(
-              height: 50,
-              color: e,
-            ),
+      body: SafeArea(
+        child: SingleChildScrollView(
+          child: Column(
+            children: [
+              ...Colors.primaries.map(
+                (e) => Container(
+                  height: 50,
+                  color: e,
+                ),
+              ),
+              ElevatedButton(
+                onPressed: () {
+                  showAlertDialog(
+                    context,
+                    message: 'AMAZING CONTENT',
+                  );
+                },
+                child: const Text(
+                  'show message',
+                  style: TextStyle(fontSize: 20),
+                ),
+              ),
+            ],
           ),
-          ElevatedButton(
-            onPressed: () {
-              showAlertDialog(
-                context,
-                message: 'AMAZING COURSE',
-              );
-            },
-            child: const Text(
-              'show message',
-              style: TextStyle(fontSize: 20),
-            ),
-          ),
-        ],
+        ),
       ),
     );
   }

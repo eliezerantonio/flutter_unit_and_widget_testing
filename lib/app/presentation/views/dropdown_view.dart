@@ -33,6 +33,7 @@ class _DropdownViewState extends State<DropdownView> {
               .map(
                 (e) => DropdownMenuItem(
                   value: e,
+                  key: Key("item-$e"),
                   child: Text(
                     e,
                     style: const TextStyle(

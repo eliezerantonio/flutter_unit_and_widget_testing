@@ -7,7 +7,7 @@ class OverflowView extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(),
-      body: SafeArea(
+      body: const SafeArea(
         child: SizedBox(
           width: double.infinity,
           child: Column(
@@ -15,16 +15,19 @@ class OverflowView extends StatelessWidget {
             children: [
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
-                children: const [
-                  Text(
-                    'This is a flutter course. Add more text to '
-                    'force an overflow error',
-                    style: TextStyle(fontSize: 18),
+                children: [
+                  Expanded(
+                    child: Text(
+                      'This is a flutter test. Add more text to '
+                      'force an overflow error',
+                      style: TextStyle(fontSize: 18),
+                    ),
                   ),
                   SizedBox(width: 30),
                   Icon(
                     Icons.flutter_dash,
-                    size: 40,
+                    size: 100,
+                    color: Colors.blue,
                   )
                 ],
               ),

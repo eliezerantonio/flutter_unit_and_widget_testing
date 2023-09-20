@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 
 import 'presentation/routes/app_routes.dart';
-import 'presentation/views/menu_view.dart';
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
@@ -14,7 +13,7 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.blue,
         useMaterial3: true,
       ),
-      home: const MenuView(),
+      initialRoute: "/",
       routes: appRoutes,
     );
   }

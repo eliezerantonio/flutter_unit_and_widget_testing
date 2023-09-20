@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_unit_and_widget_testing/app/presentation/views/menu_view.dart';
 
 import '../views/content_not_visible_view.dart';
 import '../views/counter_view.dart';
@@ -13,6 +14,7 @@ import 'routes.dart';
 
 Map<String, WidgetBuilder> get appRoutes {
   return {
+    '/': (_) => const MenuView(),
     Routes.COUNTER: (_) => const CounterView(),
     Routes.PLATFORM_WIDGETS: (_) => const PlatformWidgetsView(),
     Routes.LOGIN: (_) => const LoginView(),

@@ -23,6 +23,7 @@ class _CounterViewState extends State<CounterView> {
       appBar: AppBar(
         actions: [
           IconButton(
+            key: const Key("icon-button"),
             onPressed: () {
               Navigator.push(
                 context,

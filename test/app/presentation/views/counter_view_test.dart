@@ -1,12 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
-import 'package:flutter_unit_and_widget_testing/app/presentation/views/counter_view.dart';
+import 'package:flutter_unit_and_widget_testing/app/my_app.dart';
+import 'package:flutter_unit_and_widget_testing/app/presentation/routes/routes.dart';
 
 void main() {
   testWidgets('CounterView', (tester) async {
-    await tester.pumpWidget(const MaterialApp(
-      home: CounterView(),
-    ));
+    await _initView(tester);
 
     expect(find.text('0'), findsOneWidget);
 
@@ -25,15 +24,19 @@ void main() {
   testWidgets(
     'CounterView nav',
     (tester) async {
-      await tester.pumpWidget(
-        const MaterialApp(
-          home: CounterView(),
-        ),
-      );
+      await _initView(tester);
 
-      await tester.tap(find.byType(IconButton));
+      await tester.tap(find.byKey(const Key("icon-button")));
       await tester.pumpAndSettle();
       expect(find.text("data"), findsWidgets);
     },
+  );
+}
+
+Future<void> _initView(WidgetTester tester) async {
+  return tester.pumpWidget(
+    const MyApp(
+      initialRoute: Routes.COUNTER,
+    ),
   );
 }

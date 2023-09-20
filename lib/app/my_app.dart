@@ -3,8 +3,10 @@ import 'package:flutter/material.dart';
 import 'presentation/routes/app_routes.dart';
 
 class MyApp extends StatelessWidget {
-  const MyApp({super.key});
+  const MyApp({super.key, this.initialRoute, this.routes});
 
+  final String? initialRoute;
+  final Map<String, WidgetBuilder>? routes;
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -13,8 +15,8 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.blue,
         useMaterial3: true,
       ),
-      initialRoute: "/",
-      routes: appRoutes,
+      initialRoute: initialRoute ?? "/",
+      routes: routes ?? appRoutes,
     );
   }
 }

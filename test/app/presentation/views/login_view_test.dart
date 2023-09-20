@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
+import 'package:flutter_unit_and_widget_testing/app/my_app.dart';
 import 'package:flutter_unit_and_widget_testing/app/presentation/routes/routes.dart';
 import 'package:flutter_unit_and_widget_testing/app/presentation/utils/validator.dart';
-import 'package:flutter_unit_and_widget_testing/app/presentation/views/home_view.dart';
-import 'package:flutter_unit_and_widget_testing/app/presentation/views/login_view.dart';
 
 void main() {
   final emailFinder = find.byKey(const Key("input-email"));
@@ -65,11 +64,8 @@ void main() {
 
 Future<void> _initView(WidgetTester tester) async {
   return tester.pumpWidget(
-    MaterialApp(
-      home: const LoginView(),
-      routes: {
-        Routes.HOME: (context) => const HomeView(),
-      },
+    const MyApp(
+      initialRoute: Routes.LOGIN,
     ),
   );
 }
